@@ -1,0 +1,1526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Growify - E-Commerce Management Agency</title>
+
+<style>
+
+/* ================= GENERAL ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f7fb;
+    color:#222;
+}
+
+section{
+    scroll-margin-top:80px;
+}
+
+button{
+    cursor:pointer;
+}
+
+
+/* ================= HEADER ================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:#111827;
+    color:white;
+
+    padding:18px 5%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    box-shadow:0 3px 15px rgba(0,0,0,0.2);
+}
+
+.logo{
+    font-size:30px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#22c55e;
+}
+
+nav{
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:17px;
+    cursor:pointer;
+}
+
+nav a:hover{
+    color:#22c55e;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:90vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:80px 20px;
+
+    background:
+    linear-gradient(135deg,#111827,#374151);
+    
+    color:white;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:60px;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:#22c55e;
+}
+
+.hero p{
+    font-size:22px;
+    line-height:1.6;
+    margin-bottom:35px;
+}
+
+.btn{
+    background:#22c55e;
+    color:white;
+
+    border:none;
+
+    padding:15px 32px;
+
+    border-radius:8px;
+
+    font-size:17px;
+
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#16a34a;
+    transform:translateY(-2px);
+}
+
+
+/* ================= COMMON ================= */
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.title{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#666;
+    font-size:18px;
+    margin-bottom:45px;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about{
+    padding:90px 5%;
+    background:white;
+}
+
+.about-content{
+    display:flex;
+    gap:50px;
+    align-items:center;
+}
+
+.about-text{
+    flex:1;
+}
+
+.about-text h2{
+    font-size:35px;
+    margin-bottom:20px;
+}
+
+.about-text p{
+    font-size:18px;
+    line-height:1.8;
+    color:#555;
+}
+
+.about-box{
+    flex:1;
+
+    background:#111827;
+    color:white;
+
+    padding:45px;
+
+    border-radius:15px;
+
+    text-align:center;
+}
+
+.about-box h2{
+    color:#22c55e;
+    font-size:45px;
+}
+
+.about-box p{
+    margin-top:10px;
+}
+
+
+/* ================= SERVICES ================= */
+
+.services{
+    padding:90px 5%;
+    background:#f5f7fb;
+}
+
+.service-container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.service{
+    background:white;
+
+    padding:35px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+
+    transition:0.3s;
+}
+
+.service:hover{
+    transform:translateY(-8px);
+}
+
+.service-icon{
+    font-size:45px;
+    margin-bottom:20px;
+}
+
+.service h3{
+    font-size:23px;
+    margin-bottom:15px;
+}
+
+.service p{
+    color:#666;
+    line-height:1.6;
+}
+
+
+/* ================= PLANS ================= */
+
+.plans{
+    padding:90px 5%;
+    background:white;
+}
+
+.plan-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.plan{
+    width:310px;
+
+    background:white;
+
+    padding:35px 28px;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 25px rgba(0,0,0,0.12);
+
+    text-align:center;
+
+    transition:0.3s;
+}
+
+.plan:hover{
+    transform:translateY(-8px);
+}
+
+.plan h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.price{
+    font-size:35px;
+
+    color:#16a34a;
+
+    font-weight:bold;
+
+    margin-bottom:25px;
+}
+
+.plan ul{
+    list-style:none;
+
+    text-align:left;
+
+    margin-bottom:25px;
+}
+
+.plan li{
+    padding:10px 0;
+
+    border-bottom:1px solid #eee;
+}
+
+
+/* ================= SELLER FORM ================= */
+
+.seller-section{
+    padding:90px 20px;
+
+    background:#f5f7fb;
+}
+
+.form-box{
+    width:600px;
+    max-width:95%;
+
+    margin:auto;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 25px rgba(0,0,0,0.12);
+}
+
+.form-box h1{
+    text-align:center;
+
+    margin-bottom:25px;
+}
+
+.selected{
+    background:#ecfdf5;
+
+    padding:20px;
+
+    border-radius:10px;
+
+    text-align:center;
+
+    margin-bottom:25px;
+}
+
+.selected h2{
+    color:#16a34a;
+
+    margin:8px 0;
+}
+
+label{
+    display:block;
+
+    margin-top:15px;
+
+    margin-bottom:7px;
+
+    font-weight:bold;
+}
+
+input,
+textarea,
+select{
+
+    width:100%;
+
+    padding:13px;
+
+    border:1px solid #ccc;
+
+    border-radius:7px;
+
+    font-size:15px;
+}
+
+textarea{
+    height:100px;
+
+    resize:none;
+}
+
+.form-box .btn{
+    width:100%;
+
+    margin-top:25px;
+}
+
+
+/* ================= PAYMENT ================= */
+
+.payment-section{
+    padding:100px 20px;
+
+    background:#f5f7fb;
+}
+
+
+/* ================= SUCCESS ================= */
+
+.success-section{
+    padding:120px 20px;
+
+    background:#f5f7fb;
+}
+
+.success{
+    width:600px;
+    max-width:95%;
+
+    margin:auto;
+
+    background:white;
+
+    padding:60px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    box-shadow:0 5px 25px rgba(0,0,0,0.12);
+}
+
+.success-icon{
+    font-size:70px;
+
+    color:#22c55e;
+
+    margin-bottom:20px;
+}
+
+.success h1{
+    color:#16a34a;
+
+    margin-bottom:15px;
+}
+
+.success p{
+    color:#666;
+
+    margin:12px;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact{
+    padding:90px 5%;
+
+    background:white;
+}
+
+.contact-container{
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+}
+
+.contact-box{
+    width:300px;
+
+    padding:35px;
+
+    background:#f5f7fb;
+
+    border-radius:12px;
+
+    text-align:center;
+}
+
+.contact-box h3{
+    margin-bottom:12px;
+}
+
+.contact-box p{
+    color:#666;
+}
+
+
+/* ================= WHATSAPP ================= */
+
+.whatsapp{
+    position:fixed;
+
+    right:25px;
+    bottom:25px;
+
+    background:#25D366;
+
+    color:white;
+
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:30px;
+
+    text-decoration:none;
+
+    z-index:2000;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.25);
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#111827;
+
+    color:white;
+
+    text-align:center;
+
+    padding:30px;
+}
+
+footer span{
+    color:#22c55e;
+}
+
+
+/* ================= HIDDEN PAGES ================= */
+
+#sellerPage,
+#paymentPage,
+#successPage{
+    display:none;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:800px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav{
+        gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .about-content{
+        flex-direction:column;
+    }
+
+    .service-container{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="logo">
+Grow<span>ify</span>
+</div>
+
+<nav>
+
+<a onclick="goHome()">Home</a>
+
+<a onclick="scrollToSection('about')">About</a>
+
+<a onclick="scrollToSection('services')">Services</a>
+
+<a onclick="scrollToSection('plans')">Plans</a>
+
+<a onclick="scrollToSection('contact')">Contact</a>
+
+</nav>
+
+</header>
+
+
+
+<!-- ================= MAIN WEBSITE ================= -->
+
+<div id="mainWebsite">
+
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>
+Grow Your <span>E-Commerce</span> Business
+</h1>
+
+<p>
+Complete marketplace management solutions for online sellers.
+Grow your business with professional e-commerce support.
+</p>
+
+<button class="btn"
+onclick="scrollToSection('plans')">
+
+View Plans
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<div class="container">
+
+<h1 class="title">
+About Growify
+</h1>
+
+<p class="subtitle">
+Your E-Commerce Growth Partner
+</p>
+
+
+<div class="about-content">
+
+<div class="about-text">
+
+<h2>
+We Help Sellers Grow Online
+</h2>
+
+<p>
+
+Growify is an E-Commerce Management Agency that helps
+online sellers manage and grow their businesses across
+different marketplace platforms.
+
+</p>
+
+<br>
+
+<p>
+
+Our services include product listing, account management,
+SEO optimization, inventory management, PPC support and
+seller assistance.
+
+</p>
+
+</div>
+
+
+<div class="about-box">
+
+<h2>100+</h2>
+
+<p>Seller Accounts Managed</p>
+
+<br>
+
+<h2>5+</h2>
+
+<p>Marketplace Platforms</p>
+
+<br>
+
+<h2>24/7</h2>
+
+<p>Seller Support</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+<div class="container">
+
+<h1 class="title">
+Our Services
+</h1>
+
+<p class="subtitle">
+Complete solutions for your online business
+</p>
+
+
+<div class="service-container">
+
+
+<div class="service">
+
+<div class="service-icon">🛍️</div>
+
+<h3>Product Listing</h3>
+
+<p>
+Professional product listing and catalog management
+for your online store.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">📊</div>
+
+<h3>SEO Optimization</h3>
+
+<p>
+Improve product visibility and search ranking
+with effective SEO.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">📦</div>
+
+<h3>Inventory Management</h3>
+
+<p>
+Manage your inventory and keep your products
+available for customers.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">📢</div>
+
+<h3>PPC Advertising</h3>
+
+<p>
+Promote your products through effective
+advertising campaigns.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">👨‍💼</div>
+
+<h3>Account Management</h3>
+
+<p>
+Complete management and monitoring of your
+seller marketplace account.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">💬</div>
+
+<h3>Seller Support</h3>
+
+<p>
+Get professional assistance for your
+e-commerce business.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- PLANS -->
+
+<section class="plans" id="plans">
+
+<div class="container">
+
+<h1 class="title">
+Choose Your Plan
+</h1>
+
+<p class="subtitle">
+Select the best plan for your business
+</p>
+
+
+<div class="plan-container">
+
+
+<!-- BASIC -->
+
+<div class="plan">
+
+<h2>Basic</h2>
+
+<div class="price">
+₹999
+</div>
+
+<ul>
+
+<li>✓ Account Management</li>
+
+<li>✓ Product Listing</li>
+
+<li>✓ Basic SEO</li>
+
+<li>✓ Seller Support</li>
+
+</ul>
+
+<button class="btn"
+onclick="selectPlan('Basic','999')">
+
+Select Plan
+
+</button>
+
+</div>
+
+
+
+<!-- STANDARD -->
+
+<div class="plan">
+
+<h2>Standard</h2>
+
+<div class="price">
+₹1999
+</div>
+
+<ul>
+
+<li>✓ Account Management</li>
+
+<li>✓ Product Listing</li>
+
+<li>✓ SEO Optimization</li>
+
+<li>✓ PPC Support</li>
+
+<li>✓ Inventory Management</li>
+
+</ul>
+
+<button class="btn"
+onclick="selectPlan('Standard','1999')">
+
+Select Plan
+
+</button>
+
+</div>
+
+
+
+<!-- PREMIUM -->
+
+<div class="plan">
+
+<h2>Premium</h2>
+
+<div class="price">
+₹2999
+</div>
+
+<ul>
+
+<li>✓ Complete Account Management</li>
+
+<li>✓ Advanced SEO</li>
+
+<li>✓ PPC Advertising</li>
+
+<li>✓ Inventory Management</li>
+
+<li>✓ Priority Support</li>
+
+</ul>
+
+<button class="btn"
+onclick="selectPlan('Premium','2999')">
+
+Select Plan
+
+</button>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<div class="container">
+
+<h1 class="title">
+Contact Growify
+</h1>
+
+<p class="subtitle">
+We are ready to help your business grow
+</p>
+
+
+<div class="contact-container">
+
+
+<div class="contact-box">
+
+<h3>📧 Email</h3>
+
+<p>
+khadesanika09@gmail.com
+</p>
+
+</div>
+
+
+<div class="contact-box">
+
+<h3>📱 Phone</h3>
+
+<p>
++91 8799820409
+</p>
+
+</div>
+
+
+<div class="contact-box">
+
+<h3>💬 WhatsApp</h3>
+
+<p>
+Chat with Growify
+</p>
+
+<br>
+
+<button class="btn"
+onclick="openWhatsApp()">
+
+WhatsApp Us
+
+</button>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+
+
+<!-- ================= SELLER PAGE ================= -->
+
+<section id="sellerPage" class="seller-section">
+
+<div class="form-box">
+
+<h1>Seller Details</h1>
+
+
+<div class="selected">
+
+<p>Selected Plan</p>
+
+<h2 id="selectedPlan"></h2>
+
+<h3>
+₹<span id="selectedPrice"></span>
+</h3>
+
+</div>
+
+
+<form onsubmit="goPayment(event)">
+
+
+<label>
+Seller Name
+</label>
+
+<input
+type="text"
+id="sellerName"
+required
+placeholder="Enter your name"
+>
+
+
+<label>
+Email
+</label>
+
+<input
+type="email"
+id="sellerEmail"
+required
+placeholder="Enter email"
+>
+
+
+<label>
+Phone Number
+</label>
+
+<input
+type="tel"
+id="sellerPhone"
+required
+placeholder="Enter phone number"
+>
+
+
+<label>
+Business Name
+</label>
+
+<input
+type="text"
+id="businessName"
+required
+placeholder="Enter business name"
+>
+
+
+<label>
+Address
+</label>
+
+<textarea
+id="sellerAddress"
+required
+placeholder="Enter business address">
+</textarea>
+
+
+<button
+class="btn"
+type="submit">
+
+Continue to Payment
+
+</button>
+
+</form>
+
+<br>
+
+<button
+class="btn"
+style="background:#6b7280"
+onclick="backToPlans()">
+
+← Back to Plans
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= PAYMENT PAGE ================= -->
+
+<section id="paymentPage" class="payment-section">
+
+<div class="form-box">
+
+<h1>
+Payment
+</h1>
+
+
+<div class="selected">
+
+<p>Selected Plan</p>
+
+<h2 id="paymentPlan"></h2>
+
+<h3>
+₹<span id="paymentPrice"></span>
+</h3>
+
+</div>
+
+
+<label>
+Payment Method
+</label>
+
+<select id="paymentMethod">
+
+<option value="UPI">
+UPI
+</option>
+
+<option value="Debit Card">
+Debit Card
+</option>
+
+<option value="Credit Card">
+Credit Card
+</option>
+
+<option value="Net Banking">
+Net Banking
+</option>
+
+</select>
+
+
+<button
+class="btn"
+onclick="paymentSuccess()">
+
+Pay Now
+
+</button>
+
+
+<br><br>
+
+
+<button
+class="btn"
+style="background:#6b7280"
+onclick="backToSeller()">
+
+← Back
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= SUCCESS PAGE ================= -->
+
+<section id="successPage" class="success-section">
+
+<div class="success">
+
+<div class="success-icon">
+✓
+</div>
+
+<h1>
+Payment Successful
+</h1>
+
+<h2>
+Welcome to Growify!
+</h2>
+
+<p>
+Your selected plan has been successfully registered.
+</p>
+
+<p>
+Our team will contact you soon.
+</p>
+
+<br>
+
+<button
+class="btn"
+onclick="sendWhatsApp()">
+
+Send Details on WhatsApp
+
+</button>
+
+<br><br>
+
+<button
+class="btn"
+style="background:#374151"
+onclick="goHome()">
+
+Back to Home
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= WHATSAPP ================= -->
+
+<a
+class="whatsapp"
+href="https://wa.me/918799820409"
+target="_blank">
+
+💬
+
+</a>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+© 2026 <span>Growify</span> |
+E-Commerce Management Agency
+</p>
+
+<br>
+
+<p>
+Phone: +91 8799820409
+</p>
+
+</footer>
+
+
+
+<script>
+
+
+/* ================= VARIABLES ================= */
+
+let selectedPlanName = "";
+
+let selectedPlanPrice = "";
+
+
+
+/* ================= SCROLL ================= */
+
+function scrollToSection(id){
+
+    document.getElementById(id).scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+
+/* ================= HOME ================= */
+
+function goHome(){
+
+    document.getElementById("mainWebsite").style.display="block";
+
+    document.getElementById("sellerPage").style.display="none";
+
+    document.getElementById("paymentPage").style.display="none";
+
+    document.getElementById("successPage").style.display="none";
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+
+/* ================= SELECT PLAN ================= */
+
+function selectPlan(plan,price){
+
+    selectedPlanName = plan;
+
+    selectedPlanPrice = price;
+
+
+    document.getElementById("selectedPlan").innerHTML =
+        plan;
+
+    document.getElementById("selectedPrice").innerHTML =
+        price;
+
+
+    document.getElementById("paymentPlan").innerHTML =
+        plan;
+
+    document.getElementById("paymentPrice").innerHTML =
+        price;
+
+
+    document.getElementById("mainWebsite").style.display="none";
+
+    document.getElementById("sellerPage").style.display="block";
+
+    document.getElementById("paymentPage").style.display="none";
+
+    document.getElementById("successPage").style.display="none";
+
+
+    window.scrollTo(0,0);
+
+}
+
+
+
+/* ================= SELLER → PAYMENT ================= */
+
+function goPayment(event){
+
+    event.preventDefault();
+
+
+    document.getElementById("sellerPage").style.display="none";
+
+    document.getElementById("paymentPage").style.display="block";
+
+
+    window.scrollTo(0,0);
+
+}
+
+
+
+/* ================= PAYMENT ================= */
+
+function paymentSuccess(){
+
+    alert(
+        "Payment Successful!\n\n" +
+        "This is a project demonstration."
+    );
+
+
+    document.getElementById("paymentPage").style.display="none";
+
+    document.getElementById("successPage").style.display="block";
+
+
+    window.scrollTo(0,0);
+
+}
+
+
+
+/* ================= BACK TO PLANS ================= */
+
+function backToPlans(){
+
+    document.getElementById("sellerPage").style.display="none";
+
+    document.getElementById("mainWebsite").style.display="block";
+
+    setTimeout(function(){
+
+        scrollToSection("plans");
+
+    },100);
+
+}
+
+
+
+/* ================= BACK TO SELLER ================= */
+
+function backToSeller(){
+
+    document.getElementById("paymentPage").style.display="none";
+
+    document.getElementById("sellerPage").style.display="block";
+
+    window.scrollTo(0,0);
+
+}
+
+
+
+/* ================= WHATSAPP ================= */
+
+function openWhatsApp(){
+
+    window.open(
+        "https://wa.me/918799820409?text=Hello%20Growify,%20I%20want%20to%20know%20more%20about%20your%20e-commerce%20services.",
+        "_blank"
+    );
+
+}
+
+
+
+/* ================= SEND DETAILS ================= */
+
+function sendWhatsApp(){
+
+    let name =
+        document.getElementById("sellerName").value;
+
+    let email =
+        document.getElementById("sellerEmail").value;
+
+    let phone =
+        document.getElementById("sellerPhone").value;
+
+    let business =
+        document.getElementById("businessName").value;
+
+
+    let message =
+        "Hello Growify,%0A%0A" +
+
+        "Seller Name: " + name + "%0A" +
+
+        "Email: " + email + "%0A" +
+
+        "Phone: " + phone + "%0A" +
+
+        "Business Name: " + business + "%0A" +
+
+        "Selected Plan: " + selectedPlanName + "%0A" +
+
+        "Plan Amount: ₹" + selectedPlanPrice + "%0A%0A" +
+
+        "Payment Status: Successful";
+
+
+    window.open(
+        "https://wa.me/918799820409?text=" + message,
+        "_blank"
+    );
+
+}
+
+</script>
+
+
+</body>
+</html>
